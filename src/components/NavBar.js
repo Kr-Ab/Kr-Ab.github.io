@@ -1,27 +1,27 @@
 import React from "react";
 
-export default function NavBar() {
+export default function NavBar({activeSection}) {
+  const sections = [
+    {id: "about", label: "About"},
+    {id: "experience", label: "Experience"},
+    {id: "education", label: "Education"},
+    {id: "skills", label: "Skills"},
+    {id: "projects", label: "Projects"},
+    {id: "resume", label: "Resume"},
+  ];
   return (
     <nav>
       <ul>
-        <li>
-          <a href="#about">About</a>
-        </li>
-        <li>
-          <a href="#experience">Experience</a>
-        </li>
-        <li>
-          <a href="#education">Education</a>
-        </li>
-        <li>
-          <a href="#skills">Skills</a>
-        </li>
-        <li>
-          <a href="#projects">Projects</a>
-        </li>
-        <li>
-          <a href="#resume">Resume</a>
-        </li>
+        {sections.map((s) => (
+          <li key={s.id}>
+            <a
+              href={`#${s.id}`}
+              className={activeSection === s.id ? "active" : ""}
+            >
+              {s.label}
+            </a>
+          </li>
+        ))}
       </ul>
     </nav>
   );

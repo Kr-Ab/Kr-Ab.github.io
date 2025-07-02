@@ -11,6 +11,7 @@ import Resume from "./components/Resume";
 
 function App() {
   const [profile, setProfile] = useState(null);
+  const [activeSection, setActiveSection] = useState("about");
 
   useEffect(() => {
     fetch("/profile.json")
@@ -25,6 +26,22 @@ function App() {
       if (!btn) return;
       if (window.scrollY > 200) btn.style.display = "block";
       else btn.style.display = "none";
+
+      // Highlight nav link
+      const sections = [
+        "about",
+        "experience",
+        "education",
+        "skills",
+        "projects",
+        "resume",
+      ];
+      let found = "about";
+      for (const id of sections) {
+        const el = document.getElementById(id);
+        if (el && el.getBoundingClientRect().top <= 80) found = id;
+      }
+      setActiveSection(found);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -47,7 +64,7 @@ function App() {
   return (
     <div className="App">
       <Hero profile={profile} />
-      <NavBar />
+      <NavBar activeSection={activeSection} />
       <main>
         <About about={profile.about} />
         <Experience experience={profile.experience} />

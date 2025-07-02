@@ -1,9 +1,10 @@
 body {
-  background: #0a192f;
+  background: #3a0ca3;
   color: #fff;
   font-family: "Inter", Arial, sans-serif;
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
 }
 .App {
   text-align: center;
@@ -17,23 +18,45 @@ body {
 .hero-content {
   flex-direction: row;
   justify-content: center;
+  animation: fadeInDown 1s;
+}
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 .profile-photo {
   width: 140px;
   height: 140px;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid #64ffda;
-  background: #112240;
+  border: 4px solid #f72585;
+  background: #560bad;
+  box-shadow: 0 4px 24px #7209b744;
+  transition: transform 0.3s;
+}
+.profile-photo:hover {
+  transform: scale(1.05) rotate(-2deg);
+  box-shadow: 0 8px 32px #b5179e66;
 }
 header {
-  background: #112240;
-  border-bottom: 1px solid #233554;
+  background: linear-gradient(90deg, #7209b7 0%, #4361ee 100%);
+  border-bottom: 2px solid #4895ef;
+  box-shadow: 0 2px 12px #3a0ca344;
 }
 nav {
-  background: #0a192f;
+  background: #3f37c9;
   padding: 0.5rem 0;
   text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 2px 8px #560bad33;
 }
 nav ul {
   list-style: none;
@@ -44,28 +67,53 @@ nav ul {
   gap: 2rem;
 }
 nav a {
-  color: #64ffda;
+  color: #4cc9f0;
   text-decoration: none;
   font-weight: 700;
-  transition: color 0.2s;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+  transition: color 0.2s, border-bottom 0.2s;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 2px;
 }
 nav a:hover,
 nav a.active {
-  color: #fff;
+  color: #f72585;
+  border-bottom: 2px solid #f72585;
 }
 main {
   max-width: 900px;
   margin: 2rem auto;
   padding: 0 1rem;
+  animation: fadeInUp 1.2s;
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 section {
   margin-bottom: 2.5rem;
+  background: #480ca8cc;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px #560bad22;
+  padding: 2rem 1.5rem;
+  transition: box-shadow 0.2s;
+}
+section:hover {
+  box-shadow: 0 8px 32px #b5179e33;
 }
 h1,
 h2,
 h3 {
-  color: #64ffda;
+  color: #4cc9f0;
   margin-bottom: 0.5rem;
+  letter-spacing: 1px;
 }
 .social-icons {
   margin-top: 1rem;
@@ -75,33 +123,37 @@ h3 {
 .social-icons img {
   width: 32px;
   height: 32px;
-  filter: brightness(0) invert(1);
-  transition: filter 0.2s;
+  filter: drop-shadow(0 2px 4px #b5179e88);
+  transition: filter 0.2s, transform 0.2s;
 }
 .social-icons a:hover img {
-  filter: brightness(1) invert(0.5) sepia(1) hue-rotate(120deg) saturate(5);
+  filter: drop-shadow(0 4px 12px #f72585cc) brightness(1.2);
+  transform: scale(1.15) rotate(-8deg);
 }
 .download-btn {
   display: inline-block;
-  background: #64ffda;
-  color: #0a192f;
+  background: linear-gradient(90deg, #4895ef 0%, #f72585 100%);
+  color: #fff;
   padding: 0.75rem 1.5rem;
-  border-radius: 4px;
+  border-radius: 6px;
   font-weight: 700;
   text-decoration: none;
   margin-top: 1rem;
-  transition: background 0.2s, color 0.2s;
+  font-size: 1.1rem;
+  box-shadow: 0 2px 8px #7209b744;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
 }
 .download-btn:hover {
-  background: #fff;
-  color: #0a192f;
+  background: linear-gradient(90deg, #f72585 0%, #4895ef 100%);
+  color: #fff;
+  transform: scale(1.05);
 }
 #scrollTopBtn {
   position: fixed;
   bottom: 2rem;
   right: 2rem;
-  background: #64ffda;
-  color: #0a192f;
+  background: linear-gradient(135deg, #f72585 0%, #4895ef 100%);
+  color: #fff;
   border: none;
   border-radius: 50%;
   width: 48px;
@@ -110,7 +162,30 @@ h3 {
   cursor: pointer;
   display: none;
   z-index: 100;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 8px #7209b744;
+  transition: background 0.2s, transform 0.2s;
+}
+#scrollTopBtn:hover {
+  background: linear-gradient(135deg, #4895ef 0%, #f72585 100%);
+  transform: scale(1.1);
+}
+.exp-item,
+.edu-item,
+.project-item {
+  margin-bottom: 1.5rem;
+  animation: fadeInUp 0.8s;
+}
+.skill-group {
+  margin-bottom: 0.5rem;
+  color: #4cc9f0;
+}
+::-webkit-scrollbar {
+  width: 10px;
+  background: #3a0ca3;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #b5179e 0%, #4895ef 100%);
+  border-radius: 8px;
 }
 @media (max-width: 700px) {
   .container {
@@ -127,5 +202,8 @@ h3 {
   .profile-photo {
     width: 100px;
     height: 100px;
+  }
+  section {
+    padding: 1.2rem 0.7rem;
   }
 }
