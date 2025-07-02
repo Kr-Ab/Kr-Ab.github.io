@@ -1,16 +1,30 @@
-import React from "react";
+import React, {useEffect, useRef} from "react";
 
 export default function Experience({experience}) {
+  const sectionRef = useRef();
+  useEffect(() => {
+    const section = sectionRef.current;
+    const onScroll = () => {
+      if (!section) return;
+      const rect = section.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 80) {
+        section.classList.add("visible");
+      }
+    };
+    window.addEventListener("scroll", onScroll);
+    onScroll();
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
   return (
-    <section id="experience">
+    <section id="experience" ref={sectionRef}>
       <h3>Experience</h3>
-      <div>
+      <div className="exp-grid">
         {experience.map((exp, i) => (
-          <div className="exp-item" key={i}>
+          <div className="exp-card" key={i}>
             <h4>
-              {exp.jobTitle} @ {exp.company}
+              {exp.jobTitle} <span className="at-company">@ {exp.company}</span>
             </h4>
-            <span>
+            <span className="exp-meta">
               {exp.duration} | {exp.location}
             </span>
             <ul>

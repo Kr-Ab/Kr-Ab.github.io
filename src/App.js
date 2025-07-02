@@ -8,6 +8,7 @@ import Education from "./components/Education";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Resume from "./components/Resume";
+import Footer from "./components/Footer";
 
 function App() {
   const [profile, setProfile] = useState(null);
@@ -62,9 +63,9 @@ function App() {
   if (!profile) return <div className="App">Loading...</div>;
 
   return (
-    <div className="App">
-      <Hero profile={profile} />
+    <div id="app-root" className="App">
       <NavBar activeSection={activeSection} />
+      <Hero profile={profile} />
       <main>
         <About about={profile.about} />
         <Experience experience={profile.experience} />
@@ -73,9 +74,10 @@ function App() {
         <Projects projects={profile.projects} />
         <Resume />
       </main>
+      <Footer profile={profile} />
       <button
         id="scrollTopBtn"
-        title="Go to top"
+        title="Back to top"
         onClick={() => window.scrollTo({top: 0, behavior: "smooth"})}
       >
         ↑
