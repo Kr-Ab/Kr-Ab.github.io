@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from "react";
+import PropTypes from 'prop-types';
 
 export default function NavBar({activeSection}) {
   const [scrolled, setScrolled] = useState(false);
@@ -49,3 +50,7 @@ export default function NavBar({activeSection}) {
     </>
   );
 }
+
+NavBar.propTypes = {
+  activeSection: PropTypes.string.isRequired,
+};
