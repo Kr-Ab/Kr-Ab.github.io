@@ -1,8 +1,8 @@
 import React, { useRef } from 'react';
-import useSectionVisible from './useSectionVisible';
+import Section from './Section';
+import styles from './Resume.module.css';
 
 export default function Resume() {
-  const sectionRef = useSectionVisible();
   const btnRef = useRef(null);
 
   // Ripple effect handler
@@ -10,7 +10,7 @@ export default function Resume() {
     const button = btnRef.current;
     if (!button) return;
     const ripple = document.createElement('span');
-    ripple.className = 'ripple';
+    ripple.className = styles.ripple;
     const rect = button.getBoundingClientRect();
     const size = Math.max(rect.width, rect.height);
     ripple.style.width = ripple.style.height = `${size}px`;
@@ -21,17 +21,16 @@ export default function Resume() {
   };
 
   return (
-    <section id="resume" ref={sectionRef}>
-      <h3>Resume</h3>
+    <Section id="resume" title="Resume">
       <a
         href="/resume.pdf"
         download
-        className="download-btn modern-download"
+        className={styles.downloadBtn}
         aria-label="Download Resume as PDF"
         ref={btnRef}
         onClick={handleRipple}
       >
-        <span className="download-icon" aria-hidden="true">
+        <span className={styles.downloadIcon} aria-hidden="true">
           {/* Heroicons solid download SVG */}
           <svg
             width="22"
@@ -46,8 +45,8 @@ export default function Resume() {
             />
           </svg>
         </span>
-        <span className="download-text">Download Resume (PDF)</span>
+        <span className={styles.downloadText}>Download Resume (PDF)</span>
       </a>
-    </section>
+    </Section>
   );
 }

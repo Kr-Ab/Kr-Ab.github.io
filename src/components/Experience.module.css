@@ -1,0 +1,48 @@
+/* Experience.module.css - Styles for the Experience section */
+.expGrid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.2rem;
+  margin-top: 2.2rem;
+  min-height: unset;
+  height: auto;
+}
+.expCard {
+  background: linear-gradient(120deg, var(--card-bg) 80%, #01c16a22 100%) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 4px 24px #01c16a33 !important;
+  padding: 1.5rem 1.1rem 1.1rem 1.1rem !important;
+  transition:
+    box-shadow 0.25s,
+    transform 0.25s,
+    background 0.25s !important;
+  opacity: 0;
+  transform: translateY(40px) scale(0.98);
+  animation: fadeInSection 1s forwards;
+  animation-delay: 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 540px;
+}
+.expCard.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  animation: fadeInSection 1s forwards;
+}
+.expCard:hover {
+  box-shadow: 0 8px 32px #01c16a99 !important;
+  background: var(--card-hover) !important;
+  transform: translateY(-8px) scale(1.03) !important;
+}
+.expMeta {
+  color: var(--text-color);
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+.atCompany {
+  color: var(--accent-color);
+  font-weight: 600;
+}

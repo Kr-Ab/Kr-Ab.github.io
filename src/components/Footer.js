@@ -1,22 +1,39 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from './Footer.module.css';
 
 export default function Footer({ profile }) {
   return (
-    <footer className="footer">
-      <div className="footer-content">
+    <footer className={styles.footer}>
+      <div className={styles.footerContent}>
         <span>
           &copy; {new Date().getFullYear()} {profile.name} &mdash; All rights reserved.
         </span>
-        <div className="footer-social">
-          <a href={profile.social.linkedin} target="_blank" rel="noopener noreferrer">
-            <i className="fab fa-linkedin"></i>
+        <div className={styles.footerSocial}>
+          <a
+            href={profile.social.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+            className={styles.socialIcon}
+          >
+            <i className="fab fa-linkedin" />
           </a>
-          <a href={profile.social.github} target="_blank" rel="noopener noreferrer">
-            <i className="fab fa-github"></i>
+          <a
+            href={profile.social.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+            className={styles.socialIcon}
+          >
+            <i className="fab fa-github" />
           </a>
-          <a href={`mailto:${profile.social.email}`}>
-            <i className="fas fa-envelope"></i>
+          <a
+            href={`mailto:${profile.social.email}`}
+            aria-label="Email"
+            className={styles.socialIcon}
+          >
+            <i className="fas fa-envelope" />
           </a>
         </div>
       </div>

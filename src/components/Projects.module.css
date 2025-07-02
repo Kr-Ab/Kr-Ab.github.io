@@ -1,0 +1,81 @@
+/* Projects.module.css - Styles for the Projects section */
+.projectsGrid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.2rem;
+  margin-top: 2.2rem;
+  min-height: unset;
+  height: auto;
+}
+.projectCard {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 540px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(120deg, var(--card-bg) 80%, #01c16a22 100%) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 4px 24px #01c16a33 !important;
+  padding: 1.5rem 1.1rem 1.1rem 1.1rem !important;
+  transition:
+    box-shadow 0.25s,
+    transform 0.25s,
+    background 0.25s !important;
+  opacity: 0;
+  transform: translateY(40px) scale(0.98);
+  animation: fadeInSection 1s forwards;
+  animation-delay: 0.2s;
+  position: relative !important;
+  color: var(--text-color) !important;
+}
+.projectCard.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  animation: fadeInSection 1s forwards;
+}
+.projectCard:hover {
+  box-shadow: 0 8px 32px #01c16a99 !important;
+  background: var(--card-hover) !important;
+  transform: translateY(-8px) scale(1.03) !important;
+}
+.projectCardTitle {
+  color: var(--accent-color);
+  font-size: 1.18rem;
+  margin-bottom: 0.6rem;
+  font-weight: 700;
+}
+.projectCardDesc {
+  color: var(--text-color);
+  font-size: 1.02rem;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+.githubBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  background: var(--accent-color);
+  color: var(--bg-color);
+  border: none;
+  border-radius: 6px;
+  padding: 0.45em 1em;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 2px 8px #01c16a33;
+  transition:
+    background 0.18s,
+    color 0.18s,
+    box-shadow 0.18s,
+    transform 0.18s;
+}
+.githubBtn:hover {
+  background: var(--card-hover);
+  color: var(--accent-color);
+  box-shadow: 0 4px 16px #01c16a55;
+  transform: translateY(-2px) scale(1.04);
+}

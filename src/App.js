@@ -78,14 +78,14 @@ function App() {
               id === 'about'
                 ? { about: profile.about }
                 : id === 'experience'
-                ? { experience: profile.experience }
-                : id === 'education'
-                ? { education: profile.education }
-                : id === 'skills'
-                ? { skills: profile.skills }
-                : id === 'projects'
-                ? { projects: profile.projects }
-                : {};
+                  ? { experience: profile.experience }
+                  : id === 'education'
+                    ? { education: profile.education }
+                    : id === 'skills'
+                      ? { skills: profile.skills }
+                      : id === 'projects'
+                        ? { projects: profile.projects }
+                        : {};
             return <SectionComponent key={id} {...sectionProps} />;
           })}
         </Suspense>

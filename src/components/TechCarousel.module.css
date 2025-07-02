@@ -1,0 +1,18 @@
+/* TechCarousel.module.css - Styles for the TechCarousel component */
+.skillsCarousel {
+  width: 100%;
+  margin-bottom: 0.5em;
+}
+.slickSlide {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+  height: 100%;
+  opacity: 0.4;
+  transition: opacity 0.3s;
+}
+.slickCenter {
+  opacity: 1 !important;
+  z-index: 2;
+}

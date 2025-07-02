@@ -58,11 +58,7 @@
     }
   ],
   "skills": {
-    "Languages": [
-      "English (Professional Working)",
-      "Hindi (Native or Bilingual)",
-      "Sanskrit (Elementary)"
-    ],
+    "Languages": ["English (Professional Working)", "Hindi (Native or Bilingual)"],
     "DevOps": [
       "Application Containers",
       "Cloud",

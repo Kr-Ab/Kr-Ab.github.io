@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
+import { SECTIONS } from './sections.config';
 
 export default function NavBar({ activeSection }) {
   const [scrolled, setScrolled] = useState(false);
@@ -15,20 +16,12 @@ export default function NavBar({ activeSection }) {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  const sections = [
-    { id: 'about', label: 'About' },
-    { id: 'experience', label: 'Experience' },
-    { id: 'education', label: 'Education' },
-    { id: 'skills', label: 'Skills' },
-    { id: 'projects', label: 'Projects' },
-    { id: 'resume', label: 'Resume' },
-  ];
   return (
     <>
       <div className="scroll-progress-bar" style={{ width: `${scrollProgress}%` }} />
       <nav className={scrolled ? 'sticky-nav nav-solid' : 'sticky-nav nav-transparent'}>
         <ul>
-          {sections.map((s) => (
+          {SECTIONS.map((s) => (
             <li key={s.id}>
               <a href={`#${s.id}`} className={activeSection === s.id ? 'active' : ''}>
                 {s.label}

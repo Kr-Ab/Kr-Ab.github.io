@@ -1,0 +1,25 @@
+/* Section.module.css - Styles for the Section wrapper */
+.section {
+  margin-bottom: 0;
+  background: var(--card-bg);
+  border-radius: 18px;
+  box-shadow: 0 2px 16px #01c16a22;
+  padding: 2.5rem 2rem;
+  transition:
+    box-shadow 0.2s,
+    transform 0.2s,
+    background 0.3s,
+    color 0.3s;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeInSection 1s forwards;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

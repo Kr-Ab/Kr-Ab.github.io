@@ -1,14 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import useSectionVisible from './useSectionVisible';
+import styles from './About.module.css';
+import Section from './Section';
 
 export default function About({ about }) {
-  const sectionRef = useSectionVisible();
   return (
-    <section id="about" ref={sectionRef}>
-      <h3>About Me</h3>
-      <p className="about-text">{about}</p>
-    </section>
+    <Section id="about" title="About Me">
+      <p className={styles.aboutText}>{about}</p>
+    </Section>
   );
 }
 
