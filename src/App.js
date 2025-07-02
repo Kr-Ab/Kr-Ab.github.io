@@ -1,14 +1,6 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useState, Suspense, lazy} from "react";
 import "./App.css";
-
-function Section({id, title, children}) {
-  return (
-    <section id={id}>
-      <h3>{title}</h3>
-      {children}
-    </section>
-  );
-}
+const Section = lazy(() => import("./components/Section"));
 
 function App() {
   const [profile, setProfile] = useState(null);
@@ -18,6 +10,30 @@ function App() {
       .then((res) => res.json())
       .then(setProfile);
   }, []);
+
+  useEffect(() => {
+    // Show/hide scroll-to-top button
+    const handleScroll = () => {
+      const btn = document.getElementById("scrollTopBtn");
+      if (!btn) return;
+      if (window.scrollY > 200) btn.style.display = "block";
+      else btn.style.display = "none";
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    // Smooth scroll for nav links
+    const navLinks = document.querySelectorAll("nav a");
+    navLinks.forEach((link) => {
+      link.onclick = function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute("href"));
+        if (target) target.scrollIntoView({behavior: "smooth"});
+      };
+    });
+  }, [profile]);
 
   if (!profile) return <div className="App">Loading...</div>;
 
@@ -79,67 +95,73 @@ function App() {
         </ul>
       </nav>
       <main>
-        <Section id="about" title="About Me">
-          <p>{profile.about}</p>
-        </Section>
-        <Section id="experience" title="Experience">
-          <div>
-            {profile.experience.map((exp, i) => (
-              <div className="exp-item" key={i}>
-                <h4>
-                  {exp.jobTitle} @ {exp.company}
-                </h4>
-                <span>
-                  {exp.duration} | {exp.location}
-                </span>
-                <ul>
-                  {exp.responsibilities.map((r, j) => (
-                    <li key={j}>{r}</li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </Section>
-        <Section id="education" title="Education">
-          <div>
-            {profile.education.map((edu, i) => (
-              <div className="edu-item" key={i}>
-                <h4>{edu.degree}</h4>
-                <span>
-                  {edu.institution}, {edu.location} ({edu.duration})
-                </span>
-              </div>
-            ))}
-          </div>
-        </Section>
-        <Section id="skills" title="Skills">
-          <div>
-            {Object.keys(profile.skills).map((group, i) => (
-              <div className="skill-group" key={i}>
-                <strong>{group}:</strong> {profile.skills[group].join(", ")}
-              </div>
-            ))}
-          </div>
-        </Section>
-        <Section id="projects" title="Projects">
-          <div>
-            {profile.projects.map((proj, i) => (
-              <div className="project-item" key={i}>
-                <h4>{proj.name}</h4>
-                <p>{proj.description}</p>
-                <a href={proj.github} target="_blank" rel="noopener noreferrer">
-                  GitHub
-                </a>
-              </div>
-            ))}
-          </div>
-        </Section>
-        <Section id="resume" title="Resume">
-          <a href="/resume.pdf" download className="download-btn">
-            Download Resume (PDF)
-          </a>
-        </Section>
+        <Suspense fallback={<div>Loading sections...</div>}>
+          <Section id="about" title="About Me">
+            <p>{profile.about}</p>
+          </Section>
+          <Section id="experience" title="Experience">
+            <div>
+              {profile.experience.map((exp, i) => (
+                <div className="exp-item" key={i}>
+                  <h4>
+                    {exp.jobTitle} @ {exp.company}
+                  </h4>
+                  <span>
+                    {exp.duration} | {exp.location}
+                  </span>
+                  <ul>
+                    {exp.responsibilities.map((r, j) => (
+                      <li key={j}>{r}</li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </Section>
+          <Section id="education" title="Education">
+            <div>
+              {profile.education.map((edu, i) => (
+                <div className="edu-item" key={i}>
+                  <h4>{edu.degree}</h4>
+                  <span>
+                    {edu.institution}, {edu.location} ({edu.duration})
+                  </span>
+                </div>
+              ))}
+            </div>
+          </Section>
+          <Section id="skills" title="Skills">
+            <div>
+              {Object.keys(profile.skills).map((group, i) => (
+                <div className="skill-group" key={i}>
+                  <strong>{group}:</strong> {profile.skills[group].join(", ")}
+                </div>
+              ))}
+            </div>
+          </Section>
+          <Section id="projects" title="Projects">
+            <div>
+              {profile.projects.map((proj, i) => (
+                <div className="project-item" key={i}>
+                  <h4>{proj.name}</h4>
+                  <p>{proj.description}</p>
+                  <a
+                    href={proj.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    GitHub
+                  </a>
+                </div>
+              ))}
+            </div>
+          </Section>
+          <Section id="resume" title="Resume">
+            <a href="/resume.pdf" download className="download-btn">
+              Download Resume (PDF)
+            </a>
+          </Section>
+        </Suspense>
       </main>
       <button
         id="scrollTopBtn"
