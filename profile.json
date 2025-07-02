@@ -1,44 +1,45 @@
 {
-  "name": "Your Name",
-  "jobTitle": "Your Job Title",
-  "shortIntro": "A short professional introduction goes here.",
+  "name": "Kumar Abhimanyu",
+  "jobTitle": "Full Stack Developer | React & Node.js Enthusiast",
+  "shortIntro": "Experienced developer passionate about building scalable web applications and modern user experiences.",
   "profilePhoto": "profile.jpg",
   "social": {
-    "linkedin": "https://linkedin.com/in/yourprofile",
-    "github": "https://github.com/yourusername",
-    "email": "your.email@example.com"
+    "linkedin": "https://linkedin.com/in/krabhimanyu",
+    "github": "https://github.com/kr-ab",
+    "email": "krabhimanyu@gmail.com"
   },
-  "about": "Write your About Me section here. This should be a summary of your professional background, interests, and goals.",
+  "about": "I am a full stack developer with a strong background in JavaScript, React, and Node.js. I enjoy solving complex problems and delivering high-quality, maintainable code. My interests include web performance, UI/UX, and open source.",
   "experience": [
     {
-      "jobTitle": "Job Title",
-      "company": "Company Name",
-      "duration": "Start – End",
-      "location": "Location",
+      "jobTitle": "Full Stack Developer",
+      "company": "Tech Company (example)",
+      "duration": "2022 – Present",
+      "location": "Remote",
       "responsibilities": [
-        "Responsibility or achievement 1.",
-        "Responsibility or achievement 2."
+        "Developed and maintained scalable web applications using React and Node.js.",
+        "Collaborated with cross-functional teams to deliver features on time.",
+        "Implemented best practices for code quality and performance."
       ]
     }
   ],
   "education": [
     {
-      "degree": "Degree Name",
-      "institution": "Institution Name",
-      "location": "Location",
-      "duration": "Start – End"
+      "degree": "Bachelor of Technology in Computer Science",
+      "institution": "Example University",
+      "location": "India",
+      "duration": "2018 – 2022"
     }
   ],
   "skills": {
-    "Languages": ["JavaScript", "Python"],
-    "Frameworks": ["React", "Node.js"],
-    "Tools": ["Git", "Docker"]
+    "Languages": ["JavaScript", "TypeScript", "Python"],
+    "Frameworks": ["React", "Node.js", "Express"],
+    "Tools": ["Git", "Docker", "MongoDB"]
   },
   "projects": [
     {
-      "name": "Project Name",
-      "description": "Short project description.",
-      "github": "https://github.com/yourusername/project"
+      "name": "Portfolio Website",
+      "description": "Personal portfolio built with React and deployed on GitHub Pages.",
+      "github": "https://github.com/kr-ab/kr-ab.github.io"
     }
   ]
 }
