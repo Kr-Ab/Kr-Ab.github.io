@@ -1,39 +1,83 @@
 {
   "name": "Kumar Abhimanyu",
-  "jobTitle": "Full Stack Developer | React & Node.js Enthusiast",
-  "shortIntro": "Experienced developer passionate about building scalable web applications and modern user experiences.",
+  "jobTitle": "DevOps Engineer at SAP Labs India | M.Tech SWE BITS Pilani",
+  "shortIntro": "DevOps Engineer with experience in release management, automation, and cloud-native applications. Passionate about building scalable, reliable systems and continuous learning.",
   "profilePhoto": "profile.jpg",
   "social": {
-    "linkedin": "https://linkedin.com/in/krabhimanyu",
+    "linkedin": "https://www.linkedin.com/in/krabhimanyu",
     "github": "https://github.com/kr-ab",
-    "email": "krabhimanyu@gmail.com"
+    "email": "krabhimanyu2000@gmail.com"
   },
-  "about": "I am a full stack developer with a strong background in JavaScript, React, and Node.js. I enjoy solving complex problems and delivering high-quality, maintainable code. My interests include web performance, UI/UX, and open source.",
+  "about": "DevOps Engineer at SAP Labs India with a strong background in cloud-native applications, automation, and release management. Skilled in application containers, cloud, and DevOps tools. Holds an M.Tech in Computer Software Engineering from BITS Pilani.",
   "experience": [
     {
-      "jobTitle": "Full Stack Developer",
-      "company": "Tech Company (example)",
-      "duration": "2022 – Present",
-      "location": "Remote",
+      "jobTitle": "Area Release Manager",
+      "company": "SAP Labs India",
+      "duration": "October 2024 - Present (10 months)",
+      "location": "Bengaluru, Karnataka, India",
       "responsibilities": [
-        "Developed and maintained scalable web applications using React and Node.js.",
-        "Collaborated with cross-functional teams to deliver features on time.",
-        "Implemented best practices for code quality and performance."
+        "Managing release cycles and coordinating with cross-functional teams.",
+        "Ensuring timely and quality releases for SAP products."
+      ]
+    },
+    {
+      "jobTitle": "DevOps Engineer",
+      "company": "SAP Labs India",
+      "duration": "August 2022 - Present (3 years)",
+      "location": "Bengaluru, Karnataka, India",
+      "responsibilities": [
+        "Implemented CI/CD pipelines and automated deployment processes.",
+        "Worked on cloud-native application development and infrastructure as code."
+      ]
+    },
+    {
+      "jobTitle": "Scholar@SAP",
+      "company": "SAP Labs India",
+      "duration": "August 2021 - August 2023 (2 years 1 month)",
+      "location": "Bengaluru, Karnataka, India",
+      "responsibilities": [
+        "Contributed to DevOps initiatives and automation projects as a scholar."
+      ]
+    },
+    {
+      "jobTitle": "Data Engineer Intern",
+      "company": "Tribes.AI",
+      "duration": "October 2020 - July 2021 (10 months)",
+      "location": "Bengaluru, Karnataka, India",
+      "responsibilities": [
+        "Worked on data engineering tasks and supported analytics projects."
       ]
     }
   ],
   "education": [
     {
-      "degree": "Bachelor of Technology in Computer Science",
-      "institution": "Example University",
+      "degree": "Master of Technology - MTech, Computer Software Engineering",
+      "institution": "Birla Institute of Technology and Science, Pilani",
       "location": "India",
-      "duration": "2018 – 2022"
+      "duration": "August 2021 - July 2023"
     }
   ],
   "skills": {
-    "Languages": ["JavaScript", "TypeScript", "Python"],
-    "Frameworks": ["React", "Node.js", "Express"],
-    "Tools": ["Git", "Docker", "MongoDB"]
+    "Languages": [
+      "English (Professional Working)",
+      "Hindi (Native or Bilingual)",
+      "Sanskrit (Elementary)"
+    ],
+    "DevOps": [
+      "Application Containers",
+      "Cloud",
+      "Cloud-Native Applications",
+      "CI/CD",
+      "Automation"
+    ],
+    "Certifications": [
+      "Machine Learning",
+      "Fundamentals of Network Communication",
+      "DevOps Foundations",
+      "CKA: Certified Kubernetes Administrator",
+      "Learning Ansible",
+      "Scrum Master"
+    ]
   },
   "projects": [
     {
