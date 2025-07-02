@@ -1,14 +1,100 @@
-@import "./styles/theme.css";
-@import "./styles/typography.css";
-@import "./styles/layout.css";
-@import "./styles/buttons.css";
-@import "./styles/animations.css";
-@import "./styles/utilities.css";
+@import './styles/theme.css';
+@import './styles/typography.css';
+@import './styles/layout.css';
+@import './styles/buttons.css';
+@import './styles/animations.css';
+@import './styles/utilities.css';
 
 /* Only keep minimal global resets or overrides here. All other styles are modularized. */
 body {
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
-  transition: background 0.3s, color 0.3s;
+  transition:
+    background 0.3s,
+    color 0.3s;
+}
+
+/* Fix: Ensure all backgrounds and text use the correct palette */
+.animated-bg,
+header.hero {
+  background: var(--bg-color) !important;
+  color: var(--text-color) !important;
+}
+
+h1,
+h2,
+h3,
+.hero h1 {
+  color: var(--accent-color) !important;
+}
+
+section,
+.project-card,
+.exp-card,
+.edu-card,
+.skill-card {
+  background: var(--card-bg) !important;
+  color: var(--text-color) !important;
+}
+
+section.visible,
+.project-card:hover,
+.exp-card:hover,
+.edu-card:hover,
+.skill-card:hover {
+  background: var(--card-hover) !important;
+}
+
+nav.sticky-nav,
+.footer {
+  background: var(--bg-color) !important;
+  color: var(--text-color) !important;
+}
+
+nav.sticky-nav ul li a.active,
+nav.sticky-nav ul li a:hover {
+  background: var(--accent-color) !important;
+  color: var(--bg-color) !important;
+}
+
+.github-btn,
+.download-btn {
+  background: var(--accent-color) !important;
+  color: var(--bg-color) !important;
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+
+.github-btn:hover,
+.download-btn:hover {
+  background: var(--bg-color) !important;
+  color: var(--accent-color) !important;
+  border: 2px solid var(--accent-color) !important;
+}
+
+.footer .footer-social a i,
+.hero .social-icons a i {
+  color: var(--icon-color) !important;
+  transition:
+    color 0.2s,
+    transform 0.2s,
+    filter 0.2s;
+}
+
+.footer .footer-social a:hover i,
+.hero .social-icons a:hover i {
+  color: var(--icon-hover) !important;
+}
+
+.theme-toggle {
+  background: var(--card-bg) !important;
+  color: var(--accent-color) !important;
+  border: 2px solid var(--accent-color) !important;
+}
+.theme-toggle:hover {
+  background: var(--accent-color) !important;
+  color: var(--bg-color) !important;
+  border: 2px solid var(--bg-color) !important;
 }

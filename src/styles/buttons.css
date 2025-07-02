@@ -3,7 +3,9 @@
 .download-btn {
   background: var(--accent-color);
   color: var(--bg-color);
-  transition: background 0.2s, color 0.2s;
+  transition:
+    background 0.2s,
+    color 0.2s;
 }
 .github-btn:hover,
 .download-btn:hover {
@@ -24,7 +26,11 @@
   justify-content: center;
   box-shadow: 0 2px 8px #0002;
   cursor: pointer;
-  transition: background 0.2s, color 0.2s, border 0.2s, transform 0.2s;
+  transition:
+    background 0.2s,
+    color 0.2s,
+    border 0.2s,
+    transform 0.2s;
   z-index: 300;
 }
 .theme-toggle:hover {
@@ -48,4 +54,69 @@ button:focus,
   box-shadow: 0 0 0 3px #01c16a88;
   border-radius: 6px;
   z-index: 10;
+}
+.download-btn.modern-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7em;
+  padding: 0.85em 2.1em;
+  font-size: 1.15rem;
+  font-weight: 700;
+  border-radius: 2em;
+  box-shadow:
+    0 4px 24px #01c16a33,
+    0 1.5px 6px #11182722;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(90deg, var(--accent-color) 80%, #01c16a88 100%);
+  color: var(--bg-color);
+  border: none;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    color 0.2s,
+    box-shadow 0.2s,
+    transform 0.15s;
+}
+.download-btn.modern-download:hover,
+.download-btn.modern-download:focus {
+  background: linear-gradient(90deg, var(--bg-color) 80%, #01c16a33 100%);
+  color: var(--accent-color);
+  box-shadow:
+    0 6px 32px #01c16a55,
+    0 2px 8px #11182733;
+  border: 2px solid var(--accent-color);
+  outline: none;
+  transform: translateY(-2px) scale(1.04);
+}
+.download-btn .download-icon {
+  display: flex;
+  align-items: center;
+  font-size: 1.3em;
+  color: inherit;
+  margin-right: 0.2em;
+}
+.download-btn .download-text {
+  z-index: 2;
+  position: relative;
+}
+.download-btn .ripple {
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple-effect 0.5s linear;
+  background: #01c16a55;
+  opacity: 0.7;
+  pointer-events: none;
+  z-index: 1;
+  left: 50%;
+  top: 50%;
+  width: 120%;
+  height: 120%;
+}
+@keyframes ripple-effect {
+  to {
+    transform: scale(2.5);
+    opacity: 0;
+  }
 }
