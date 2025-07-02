@@ -1,35 +1,33 @@
-# React Portfolio Template
+# Minimal Modular React Portfolio
 
-This is a React-based, JSON-driven personal portfolio template ready for GitHub Pages deployment.
+This is a minimal, modular React portfolio template optimized for GitHub Pages (`kr-ab.github.io`).
 
 ## 🚀 How to Use
 
 1. **Edit your profile**
    - Open `public/profile.json` and fill in your details (name, job title, about, experience, education, skills, projects, social links, etc).
    - Replace `public/profile.jpg` with your own photo (optional).
+   - Replace `public/resume.pdf` with your own ATS-compliant resume.
 
-2. **Resume Download**
-   - Replace `public/resume.pdf` with your own ATS-compliant resume. The download button will always link to this file.
-
-3. **Run Locally**
+2. **Run Locally**
    ```sh
    npm install
    npm start
    ```
    Visit `http://localhost:3000` to preview your site.
 
-4. **Deploy to GitHub Pages**
-   - Set your `homepage` in `package.json` to `https://yourusername.github.io/`.
-   - Run:
-     ```sh
-     npm run publish
-     ```
-   - Your site will be live at `https://yourusername.github.io`.
+3. **Deploy to GitHub Pages**
+   - Push to `main` or `master` branch. GitHub Actions will auto-deploy to `gh-pages` branch and publish at `https://kr-ab.github.io/`.
 
 ## 🛠️ Customization
 - All icons are in `public/assets/icons/` (SVG format).
-- Colors and fonts can be changed in `src/App.css` or your custom CSS.
-- The site is fully static after build—no backend required.
+- Colors and fonts can be changed in `src/App.css`.
+- The site is fully static—no backend required.
+
+## 📦 Project Structure
+- `public/` — static assets, `profile.json`, icons, resume, etc.
+- `src/` — React components and styles.
+- `.github/workflows/deploy.yml` — GitHub Actions for auto-deploy.
 
 ## 📄 License
 MIT or your preferred license.

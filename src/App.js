@@ -1,6 +1,15 @@
 import React, {useEffect, useState} from "react";
 import "./App.css";
 
+function Section({id, title, children}) {
+  return (
+    <section id={id}>
+      <h3>{title}</h3>
+      {children}
+    </section>
+  );
+}
+
 function App() {
   const [profile, setProfile] = useState(null);
 
@@ -31,17 +40,17 @@ function App() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img src="/assets/icons/linkedin.svg" alt="LinkedIn" />
+                <img src="assets/icons/linkedin.svg" alt="LinkedIn" />
               </a>
               <a
                 href={profile.social.github}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img src="/assets/icons/github.svg" alt="GitHub" />
+                <img src="assets/icons/github.svg" alt="GitHub" />
               </a>
               <a href={`mailto:${profile.social.email}`}>
-                <img src="/assets/icons/email.svg" alt="Email" />
+                <img src="assets/icons/email.svg" alt="Email" />
               </a>
             </div>
           </div>
@@ -70,12 +79,10 @@ function App() {
         </ul>
       </nav>
       <main>
-        <section id="about">
-          <h3>About Me</h3>
+        <Section id="about" title="About Me">
           <p>{profile.about}</p>
-        </section>
-        <section id="experience">
-          <h3>Experience</h3>
+        </Section>
+        <Section id="experience" title="Experience">
           <div>
             {profile.experience.map((exp, i) => (
               <div className="exp-item" key={i}>
@@ -93,9 +100,8 @@ function App() {
               </div>
             ))}
           </div>
-        </section>
-        <section id="education">
-          <h3>Education</h3>
+        </Section>
+        <Section id="education" title="Education">
           <div>
             {profile.education.map((edu, i) => (
               <div className="edu-item" key={i}>
@@ -106,9 +112,8 @@ function App() {
               </div>
             ))}
           </div>
-        </section>
-        <section id="skills">
-          <h3>Skills</h3>
+        </Section>
+        <Section id="skills" title="Skills">
           <div>
             {Object.keys(profile.skills).map((group, i) => (
               <div className="skill-group" key={i}>
@@ -116,9 +121,8 @@ function App() {
               </div>
             ))}
           </div>
-        </section>
-        <section id="projects">
-          <h3>Projects</h3>
+        </Section>
+        <Section id="projects" title="Projects">
           <div>
             {profile.projects.map((proj, i) => (
               <div className="project-item" key={i}>
@@ -130,13 +134,12 @@ function App() {
               </div>
             ))}
           </div>
-        </section>
-        <section id="resume">
-          <h3>Resume</h3>
+        </Section>
+        <Section id="resume" title="Resume">
           <a href="/resume.pdf" download className="download-btn">
             Download Resume (PDF)
           </a>
-        </section>
+        </Section>
       </main>
       <button
         id="scrollTopBtn"
