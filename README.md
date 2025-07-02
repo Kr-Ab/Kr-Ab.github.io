@@ -6,7 +6,7 @@ This is a minimal, modular React portfolio template optimized for GitHub Pages (
 
 1. **Edit your profile**
    - Open `public/profile.json` and fill in your details (name, job title, about, experience, education, skills, projects, social links, etc).
-   - Replace `public/profile.jpg` with your own photo (optional).
+   - Replace `public/profile.jpeg` with your own photo (optional).
    - Replace `public/resume.pdf` with your own ATS-compliant resume.
 
 2. **Run Locally**
