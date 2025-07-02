@@ -1,20 +1,9 @@
-import React, {useEffect, useRef} from "react";
+import React from 'react';
+import PropTypes from 'prop-types';
+import useSectionVisible from './useSectionVisible';
 
-export default function Education({education}) {
-  const sectionRef = useRef();
-  useEffect(() => {
-    const section = sectionRef.current;
-    const onScroll = () => {
-      if (!section) return;
-      const rect = section.getBoundingClientRect();
-      if (rect.top < window.innerHeight - 80) {
-        section.classList.add("visible");
-      }
-    };
-    window.addEventListener("scroll", onScroll);
-    onScroll();
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+export default function Education({ education }) {
+  const sectionRef = useSectionVisible();
   return (
     <section id="education" ref={sectionRef}>
       <h3>Education</h3>
@@ -31,3 +20,14 @@ export default function Education({education}) {
     </section>
   );
 }
+
+Education.propTypes = {
+  education: PropTypes.arrayOf(
+    PropTypes.shape({
+      degree: PropTypes.string.isRequired,
+      institution: PropTypes.string.isRequired,
+      location: PropTypes.string.isRequired,
+      duration: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+};

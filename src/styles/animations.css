@@ -1,0 +1,29 @@
+/* Animations and effects */
+@keyframes fadeInSection {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animated-bg,
+header.hero {
+  background: var(--bg-color);
+  color: var(--text-color);
+  transition: background 0.3s, color 0.3s;
+}
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeInUp 1s 0.1s forwards;
+}
+.fade-in-up-delay {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeInUp 1s 0.5s forwards;
+}
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}

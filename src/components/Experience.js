@@ -1,20 +1,9 @@
-import React, {useEffect, useRef} from "react";
+import React from 'react';
+import PropTypes from 'prop-types';
+import useSectionVisible from './useSectionVisible';
 
-export default function Experience({experience}) {
-  const sectionRef = useRef();
-  useEffect(() => {
-    const section = sectionRef.current;
-    const onScroll = () => {
-      if (!section) return;
-      const rect = section.getBoundingClientRect();
-      if (rect.top < window.innerHeight - 80) {
-        section.classList.add("visible");
-      }
-    };
-    window.addEventListener("scroll", onScroll);
-    onScroll();
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+export default function Experience({ experience }) {
+  const sectionRef = useSectionVisible();
   return (
     <section id="experience" ref={sectionRef}>
       <h3>Experience</h3>
@@ -38,3 +27,15 @@ export default function Experience({experience}) {
     </section>
   );
 }
+
+Experience.propTypes = {
+  experience: PropTypes.arrayOf(
+    PropTypes.shape({
+      jobTitle: PropTypes.string.isRequired,
+      company: PropTypes.string.isRequired,
+      duration: PropTypes.string.isRequired,
+      location: PropTypes.string.isRequired,
+      responsibilities: PropTypes.arrayOf(PropTypes.string).isRequired,
+    })
+  ).isRequired,
+};

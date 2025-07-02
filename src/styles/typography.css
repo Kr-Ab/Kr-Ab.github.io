@@ -1,0 +1,31 @@
+/* Typography and font families */
+body {
+  font-family: "Inter", "Montserrat", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  background: var(--bg-color);
+  color: var(--text-color);
+  transition: background 0.3s, color 0.3s;
+}
+h1,
+h2,
+h3,
+.hero h1 {
+  color: var(--heading-color);
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+  font-family: "Montserrat", "Inter", Arial, sans-serif;
+  font-weight: 900;
+}
+.about-text,
+.exp-meta,
+.edu-meta,
+.skill-list {
+  font-family: "Inter", Arial, sans-serif;
+}
+code,
+pre,
+.skill-title {
+  font-family: "Fira Mono", "Menlo", "Monaco", monospace;
+}

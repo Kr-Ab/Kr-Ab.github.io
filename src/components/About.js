@@ -1,20 +1,9 @@
-import React, {useEffect, useRef} from "react";
+import React from 'react';
+import PropTypes from 'prop-types';
+import useSectionVisible from './useSectionVisible';
 
-export default function About({about}) {
-  const sectionRef = useRef();
-  useEffect(() => {
-    const section = sectionRef.current;
-    const onScroll = () => {
-      if (!section) return;
-      const rect = section.getBoundingClientRect();
-      if (rect.top < window.innerHeight - 80) {
-        section.classList.add("visible");
-      }
-    };
-    window.addEventListener("scroll", onScroll);
-    onScroll();
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+export default function About({ about }) {
+  const sectionRef = useSectionVisible();
   return (
     <section id="about" ref={sectionRef}>
       <h3>About Me</h3>
@@ -22,3 +11,7 @@ export default function About({about}) {
     </section>
   );
 }
+
+About.propTypes = {
+  about: PropTypes.string.isRequired,
+};

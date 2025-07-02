@@ -1,0 +1,42 @@
+/* Layout and section backgrounds */
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1rem 3rem 1rem;
+  flex: 1;
+}
+section {
+  margin-bottom: 3.5rem;
+  background: var(--card-bg);
+  border-radius: 18px;
+  box-shadow: 0 2px 16px #01c16a22;
+  padding: 2.5rem 2rem;
+  transition: box-shadow 0.2s, transform 0.2s, background 0.3s, color 0.3s;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeInSection 1s forwards;
+  position: relative;
+  overflow: hidden;
+}
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+#about {
+  background: linear-gradient(120deg, var(--card-bg) 80%, #01c16a22 100%);
+}
+#experience {
+  background: linear-gradient(120deg, var(--card-bg) 70%, #01c16a33 100%);
+}
+#education {
+  background: linear-gradient(120deg, var(--card-bg) 60%, #01c16a22 100%);
+}
+#skills {
+  background: linear-gradient(120deg, var(--card-bg) 80%, #01c16a22 100%);
+}
+#projects {
+  background: linear-gradient(120deg, var(--card-bg) 70%, #01c16a33 100%);
+}
+#resume {
+  background: linear-gradient(120deg, var(--card-bg) 80%, #01c16a22 100%);
+}

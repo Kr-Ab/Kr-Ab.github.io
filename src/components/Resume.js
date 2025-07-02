@@ -1,20 +1,8 @@
-import React, {useEffect, useRef} from "react";
+import React from 'react';
+import useSectionVisible from './useSectionVisible';
 
 export default function Resume() {
-  const sectionRef = useRef();
-  useEffect(() => {
-    const section = sectionRef.current;
-    const onScroll = () => {
-      if (!section) return;
-      const rect = section.getBoundingClientRect();
-      if (rect.top < window.innerHeight - 80) {
-        section.classList.add("visible");
-      }
-    };
-    window.addEventListener("scroll", onScroll);
-    onScroll();
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  const sectionRef = useSectionVisible();
   return (
     <section id="resume" ref={sectionRef}>
       <h3>Resume</h3>

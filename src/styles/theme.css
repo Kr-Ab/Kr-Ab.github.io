@@ -1,0 +1,21 @@
+/* Theme variables and color palette */
+:root {
+  --bg-color: #111827;
+  --text-color: #ffffff;
+  --accent-color: #01c16a;
+  --card-bg: #1e293b;
+  --card-hover: #222f3e;
+  --heading-color: var(--accent-color);
+  --icon-color: #fff;
+  --icon-hover: #01c16a;
+}
+body.light-mode {
+  --bg-color: #f8fafc;
+  --text-color: #111827;
+  --accent-color: #01c16a;
+  --card-bg: #fff;
+  --card-hover: #e2e8f0;
+  --heading-color: #01c16a;
+  --icon-color: #111827;
+  --icon-hover: #01c16a;
+}
